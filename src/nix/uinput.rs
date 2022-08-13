@@ -99,7 +99,7 @@ impl UInputMouseManager {
 
         // SAFETY: either casting [u8] to [u8], or [u8] to [i8], which is the same size
         let name_bytes =
-            unsafe { &*("Mouce Lib Fake Mouse".as_ref() as *const [u8] as *const [i8]) };
+            unsafe { &*("Mouce Lib Fake Mouse".as_ref() as *const [u8]) };
         // Panic if we're doing something really stupid
         // + 1 for the null terminator; usetup.name was zero-initialized so there will be null
         // bytes after the part we copy into
